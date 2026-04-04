@@ -23,8 +23,10 @@ else
 end
 
 return {
-    "folke/snacks.nvim",
-    opts = {
-        dashboard = opt,
+    {
+        "folke/snacks.nvim",
+        opts = {
+            dashboard = opt,
+        },
     },
 }
