@@ -17,4 +17,19 @@ if vim.g.vscode then
     vim.keymap.set('n', '<leader>e', [[<cmd>call VSCodeNotify('workbench.action.toggleSidebarVisibility')<CR>]])
     vim.keymap.set('n', '<leader>ff', [[<cmd>call VSCodeNotify('workbench.action.quickOpen')<CR>]])
     vim.keymap.set('n', '<leader>oa', [[<cmd>call VSCodeNotify('workbench.action.showCommands')<CR>]])
+
+    -- vim.keymap.set('n', '<leader>uf', [[<cmd>call VSCodeNotify('workbench.action.toggleAutoSave')<CR>]])
+    vim.keymap.set('n', '<leader>uh', [[<cmd>call VSCodeNotify('clangd.inlayHints.toggle')<CR>]])
+
+    vim.keymap.set('n', 'za', [[<cmd>call VSCodeNotify('editor.toggleFold')<CR>]])
+    vim.keymap.set('n', 'zc', [[<cmd>call VSCodeNotify('editor.fold')<CR>]])
+    vim.keymap.set('n', 'zo', [[<cmd>call VSCodeNotify('editor.unfold')<CR>]])
+    vim.keymap.set('n', 'zr', [[<cmd>call VSCodeNotify('editor.unfoldAll')<CR>]])
+    vim.keymap.set('n', 'zm', [[<cmd>call VSCodeNotify('editor.foldAll')<CR>]])
+
+    pcall(vim.keymap.del, "n", "<leader>w")
+    pcall(vim.keymap.del, "n", "<leader>wd")
+    pcall(vim.keymap.del, "n", "<leader>wm")
+    vim.keymap.set('n', '<leader>w', [[<cmd>call VSCodeNotify('workbench.action.files.save')<CR>]])
+    vim.keymap.set('n', '<leader>W', [[<cmd>call VSCodeNotify('workbench.action.files.saveWithoutFormatting')<CR>]], { desc = "Save Without Formatting" })
 end
