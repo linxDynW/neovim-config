@@ -9,12 +9,6 @@ vim.api.nvim_create_autocmd({ "BufEnter", "FileType" }, {
     end,
 })
 
-local function vscode_action(cmd)
-    return function()
-        require("vscode").action(cmd)
-    end
-end
-
 return {
     { "folke/flash.nvim", enabled = true },
 
